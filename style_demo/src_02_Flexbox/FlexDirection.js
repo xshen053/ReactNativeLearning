@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View} from 'react-native';
+import {Text, StyleSheet, View, ScrollView} from 'react-native';
 
 export default class FlexDirection extends Component {
   render() {
@@ -7,20 +7,37 @@ export default class FlexDirection extends Component {
       <View>
         <Text> </Text>
         <Text style={[styles.h2]}> main axis </Text>
-        <View>
+        <ScrollView>
+          {/* default is column */}
           <Text style={[styles.h3]}>flexDirection: 'column'(default)</Text>
           <View style={[styles.container]}>
             <Text style={[styles.itemBase]}>Bei Liu</Text>
             <Text style={[styles.itemBase]}>Yu Guan</Text>
             <Text style={[styles.itemBase]}>Fei Zhang</Text>
           </View>
+          {/* column_reverse */}
+          {/* the order of text is reversed */}
           <Text style={[styles.h3]}>flexDirection: 'column_reverse'</Text>
           <View style={[styles.container, styles.flexColumnReverse]}>
             <Text style={[styles.itemBase]}>Bei Liu</Text>
             <Text style={[styles.itemBase]}>Yu Guan</Text>
             <Text style={[styles.itemBase]}>Fei Zhang</Text>
           </View>
-        </View>
+          {/* row default */}
+          <Text style={[styles.h3]}>flexDirection: 'Row'</Text>
+          <View style={[styles.container, styles.flexRow]}>
+            <Text style={[styles.itemBase]}>Bei Liu</Text>
+            <Text style={[styles.itemBase]}>Yu Guan</Text>
+            <Text style={[styles.itemBase]}>Fei Zhang</Text>
+          </View>
+          {/* row_reversed */}
+          <Text style={[styles.h3]}>flexDirection: 'Row_reverse'</Text>
+          <View style={[styles.container, styles.flexRowReverse]}>
+            <Text style={[styles.itemBase]}>Bei Liu</Text>
+            <Text style={[styles.itemBase]}>Yu Guan</Text>
+            <Text style={[styles.itemBase]}>Fei Zhang</Text>
+          </View>
+        </ScrollView>
       </View>
     );
   }
