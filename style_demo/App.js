@@ -11,7 +11,8 @@ import {StatusBar, Text, View} from 'react-native';
 // import Index from './src_07_Image';
 // import Index from './src_08_TextInput';
 // import Index from './src_10_ScrollView';
-import Index from './src_11_SectionList';
+// import Index from './src_11_SectionList';
+import Index from './src_17_AsyncStorage';
 
 export default class App extends Component {
   render() {

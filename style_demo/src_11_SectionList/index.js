@@ -10,19 +10,19 @@ import {
 
 const DATA = [
   {
-    title: 'Main dishes',
-    data: ['Pizza', 'Burger', 'Risotto'],
+    title: 'Prescription1',
+    data: ['drug1', 'drug2', 'drug3'],
   },
   {
-    title: 'Sides',
-    data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
+    title: 'Prescription2',
+    data: ['drug1', 'drug2', 'drug3'],
   },
   {
-    title: 'Drinks',
+    title: 'Prescription3',
     data: ['Water', 'Coke', 'Beer'],
   },
   {
-    title: 'Desserts',
+    title: 'Prescription4',
     data: ['Cheese Cake', 'Ice Cream'],
   },
 ];
@@ -71,7 +71,10 @@ class App extends Component {
           //   alert('bottom');
           // }}
           ListHeaderComponent={() => {
-            return <Text style={{fontSize: 40}}>Heros!</Text>;
+            return <Text style={{fontSize: 45}}>Prescriptions</Text>;
+          }}
+          ListEmptyComponent={() => {
+            return <Text style={{fontSize: 30}}> Empty </Text>;
           }}
         />
       </SafeAreaView>
@@ -91,7 +94,7 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   header: {
-    fontSize: 32,
+    fontSize: 25,
     backgroundColor: '#fff',
   },
   title: {
