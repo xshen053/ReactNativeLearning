@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet, View, Button} from 'react-native';
+import {getThreeDays} from './api';
 
 export default class index extends Component {
   getData = () => {
-    let key = '';
-    let location = '112.222.39.222';
-    const url = `https://devapi.qweather.com/v7/indices/3d?key=${key}&location=${location}`;
-    fetch(url, {
-      method: 'GET',
-    })
+    const coords = {
+      longitude: 112.222,
+      latitude: 39.444,
+    };
+    getThreeDays(coords)
       .then(res => {
         console.log(res);
-        alert('success', 'request successfully');
+        alert('succeed', 'request successfully');
       })
       .catch(err => {
         alert('error', JSON.stringify(err));
