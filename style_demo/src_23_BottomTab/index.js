@@ -18,6 +18,7 @@ function NewsScreen(prop) {
   );
 }
 const Tab = createBottomTabNavigator();
+
 export default class index extends Component {
   render() {
     return (
