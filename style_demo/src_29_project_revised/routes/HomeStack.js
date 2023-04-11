@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet, View} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
-import NewsScreen from '../screens_2/User';
+import HomeScreen from '../screens_2/Home';
 
 const Stack = createStackNavigator();
 
-export default class NewsStack extends Component {
+export default class HomeStack extends Component {
   render() {
     return (
       <Stack.Navigator
-      // headerMode={'none '}
+        initialRouteName="Home"
+        // headerMode={'none '}
       >
         <Stack.Screen
-          name="News"
-          component={NewsScreen}
+          name="Home"
+          component={HomeScreen}
           options={{
-            title: 'news',
+            title: 'homepage',
             headerStyle: {
               backgroundColor: 'red',
             },

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet, View} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from '../screens/Home';
+import HomeScreen from '../screens_2/Home';
 
 const Stack = createStackNavigator();
 
@@ -18,8 +18,9 @@ export default class HomeStack extends Component {
           options={{
             title: 'homepage',
             headerStyle: {
-              backgroundColor: 'red',
+              backgroundColor: '#00b38a',
             },
+            headerTintColor: '#fff',
           }}
         />
       </Stack.Navigator>
