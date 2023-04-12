@@ -14,7 +14,7 @@ import {StatusBar, Text, View} from 'react-native';
 // import Index from './src_07_Image';
 // import Index from './src_08_TextInput';
 // import Index from './src_10_ScrollView';
-// import Index from './src_11_SectionList';
+// import Index from './src_11_SectionList/index2';
 // import Index from './src_17_AsyncStorage';
 // import Index from './src_21_Loading';
 // import Index from './src_22_StackNavigator';
@@ -22,15 +22,12 @@ import {StatusBar, Text, View} from 'react-native';
 // import Index from './src_27_PassingParameter';
 // import Index from './src_28_API';
 // import Index from './src_29_project_revised';
-import Index from './src_29_project';
+// import Index from './src_29_project';
 // import Index from './src_18_Geolocation';
+import Index from './src_30_TodoList';
 
 export default class App extends Component {
   render() {
-    return (
-      <NavigationContainer>
-        <Index />
-      </NavigationContainer>
-    );
+    return <Index />;
   }
 }

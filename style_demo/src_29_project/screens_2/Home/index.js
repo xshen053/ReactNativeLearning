@@ -12,13 +12,14 @@ import {ScrollView} from 'react-native-gesture-handler';
 import {getCityInfo} from '../../utils/api';
 import {getIndices} from '../../utils/api';
 import {getThreeDays} from '../../utils/api';
-
+import LinearGradient from 'react-native-linear-gradient';
 export default class HomeScreen extends Component {
   constructor() {
     super();
     this.state = {
       city: {},
       indices: [],
+      threeDays: [],
     };
   }
 
@@ -56,6 +57,12 @@ export default class HomeScreen extends Component {
         indices: res,
       });
     });
+
+    getThreeDays(coords).then(res => {
+      this.setState({
+        threeDays: res,
+      });
+    });
   }
   indicesItem = ({index, item}) => {
     return (
@@ -89,6 +96,43 @@ export default class HomeScreen extends Component {
               keyExtractor={item => item.type}
               horizontal={true}
             />
+          </View>
+
+          <View style={[styles.dailyContainer]}>
+            {this.state.threeDays.map((item, index) => {
+              return (
+                <LinearGradient
+                  start={{x: 0, y: 0}}
+                  end={{x: 1, y: 0}}
+                  colors={['#ddd', '#333']}
+                  key={'weather' + index}
+                  style={[styles.dailyItem]}>
+                  <Text style={[styles.dailyItemTitle]}>{item.fxDate}</Text>
+                  <View style={[styles.dailyItemContent]}>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'space-around',
+                      }}>
+                      <Text>
+                        {item.textDay}
+                        {item.tempMax}
+                      </Text>
+                    </View>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'space-around',
+                      }}>
+                      <Text>
+                        {item.tempMin}
+                        {item.textNight}
+                      </Text>
+                    </View>
+                  </View>
+                </LinearGradient>
+              );
+            })}
           </View>
         </ScrollView>
       </View>
@@ -130,5 +174,32 @@ const styles = StyleSheet.create({
   indexBase: {
     color: '#00b38a',
     FontSize: 15,
+  },
+  dailyContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    marginHorizontal: 10,
+  },
+  dailyItem: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderRadius: 20,
+    width: Dimensions.get('window').width - 20,
+    marginTop: 10,
+  },
+  dailyItemTitle: {
+    fontSize: 20,
+    color: '#eee',
+    marginTop: 10,
+  },
+  dailyItemContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: Dimensions.get('window').width - 40,
+    alignItems: 'center',
+    marginBottom: 10,
   },
 });
