@@ -25,7 +25,7 @@ import {StatusBar, Text, View} from 'react-native';
 // import Index from './src_29_project';
 // import Index from './src_18_Geolocation';
 import Index from './src_30_TodoList';
-
+// import Index from './src_31_PrescriptionList/index2';
 export default class App extends Component {
   render() {
     return <Index />;
