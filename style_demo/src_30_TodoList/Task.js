@@ -1,15 +1,23 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet, View} from 'react-native';
 import Title from './title';
-
+import Content from './content';
 export default class Task extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showContent: false,
+    };
+  }
+
+  toggle = () => {
+    this.setState(prevState => ({showContent: !prevState.showContent}));
+  };
   render() {
     return (
       <View style={styles.items}>
-        <Title text={'MORNING'} />
-        {/* <Title text={'AFTERNOON'} />
-        <Title text={'EVENING'} />
-        <Title text={'NIGHT'} /> */}
+        <Title text={this.props.time} toggleContent={this.toggle} />
+        {this.state.showContent && <Content />}
       </View>
     );
   }

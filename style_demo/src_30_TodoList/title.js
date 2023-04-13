@@ -1,35 +1,31 @@
-import React, {useState} from 'react';
+import React, {Component} from 'react';
 import {Text, StyleSheet, View, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {TouchEventType} from 'react-native-gesture-handler/lib/typescript/TouchEventType';
 
-const Title = props => {
-  const [count, setCount] = useState(0);
-  const onPress = () => setCount(prevCount => prevCount + 1);
+export default class Title extends Component {
   imgPath = require('./images/red_cross.png');
   down = require('./images/down.png');
   up = require('./images/up.png');
 
-  return (
-    <View style={styles.item}>
-      <View style={styles.itemLeft}>
-        <View style={styles.square}></View>
-        <Text style={styles.itemText}>{props.text}</Text>
+  render() {
+    return (
+      <View style={styles.item}>
+        <View style={styles.itemLeft}>
+          <View style={styles.square}></View>
+          <Text style={styles.itemText}>{this.props.text}</Text>
+        </View>
+        <View style={styles.sectionImage}>
+          <Image source={this.imgPath} style={styles.tick_cross} />
+          <Text>Missed</Text>
+          <TouchableOpacity onPress={this.props.toggleContent}>
+            <Image source={this.down} style={styles.tick_cross} />
+          </TouchableOpacity>
+        </View>
       </View>
-      <View style={styles.sectionImage}>
-        <Image source={imgPath} style={styles.tick_cross} />
-        <Text>Missed</Text>
-        <Text>Count: {count}</Text>
-
-        {/* touch button */}
-        <TouchableOpacity onPress={onPress}>
-          <Image source={down} style={styles.tick_cross} />
-        </TouchableOpacity>
-        {/* <Text>{this.state.displayData[0].data}</Text> */}
-      </View>
-    </View>
-  );
-};
+    );
+  }
+}
 const styles = StyleSheet.create({
   sectionImage: {
     flexDirection: 'row',
@@ -75,5 +71,3 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
 });
-
-export default Title;

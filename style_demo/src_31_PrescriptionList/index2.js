@@ -8,7 +8,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import Task from '../src_30_TodoList/task';
+import Task from '../src_30_TodoList/task.js';
 
 var originalData = [
   {

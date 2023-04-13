@@ -9,8 +9,10 @@ export default class index extends Component {
           <Text style={styles.sectionTitle}>Tracking</Text>
           <Text style={styles.date}>Apr 11, 2023</Text>
           <View style={styles.items}>
-            <Task />
-            <Task />
+            <Task time="MORNING" />
+            <Task time="AFTERNOON" />
+            <Task time="EVENING" />
+            <Task time="NIGHT" />
           </View>
         </View>
       </View>
