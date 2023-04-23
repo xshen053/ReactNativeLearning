@@ -2,12 +2,14 @@
   "name": "demo_april",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "dev": "node ./src_34_chatGPT/script.js"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.18.1",
@@ -19,6 +21,8 @@
     "@react-navigation/stack": "^6.3.16",
     "@rneui/base": "^0.0.0-edge.2",
     "@rneui/themed": "^0.0.0-edge.2",
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1",
     "react": "18.2.0",
     "react-native": "0.71.6",
     "react-native-gesture-handler": "^2.9.0",
@@ -27,7 +31,9 @@
     "react-native-safe-area-context": "^3.4.1",
     "react-native-screens": "^3.20.0",
     "react-native-tab-view": "^3.5.1",
-    "react-native-vector-icons": "^9.2.0"
+    "react-native-vector-icons": "^9.2.0",
+    "react-redux": "^8.0.5",
+    "redux-thunk": "^2.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

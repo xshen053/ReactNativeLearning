@@ -2,6 +2,8 @@ import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import React, {Component} from 'react';
 import {StatusBar, Text, View} from 'react-native';
+import {Provider as StoreProvider} from 'react-redux';
+import store from './src_29_project';
 
 // import Index from './src_01_StyleSheet';
 // import Index from './src_02_Flexbox/FlexDirection';
@@ -29,9 +31,11 @@ import Index from './src_29_project_revised';
 export default class App extends Component {
   render() {
     return (
-      <NavigationContainer>
-        <Index />
-      </NavigationContainer>
+      <StoreProvider store={store}>
+        <NavigationContainer>
+          <Index />
+        </NavigationContainer>
+      </StoreProvider>
     );
   }
 }
